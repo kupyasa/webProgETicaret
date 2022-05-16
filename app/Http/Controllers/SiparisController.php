@@ -17,7 +17,7 @@ class SiparisController extends Controller
      */
     public function index()
     {   // 
-        return view('customer.siparislerim',['siparisler' => Siparis::where([['user_id','=',auth()->user()->id]])->groupBy('siparis_kod')->get()]);
+        return view('customer.siparislerim',['siparisler' => Siparis::where([['user_id','=',auth()->user()->id]])->groupBy('siparis_kod')->groupBy('id')->get()]);
     }
 
     /**
