@@ -10,7 +10,7 @@ class AdminSiparisController extends Controller
     public function index()
     {
         
-        return view('admin.siparisler', ['siparisler' => Siparis::groupBy('siparis_kod')->get()]);
+        return view('admin.siparisler', ['siparisler' => Siparis::groupBy('siparis_kod')->groupBy('id')->get()]);
     }
 
     public function edit($siparis_kod)
